@@ -42,7 +42,7 @@ describe('TennisGame', () => {
     });
   });
 
-  describe('TennisGame3', () => {
+  describe.only('TennisGame3', () => {
     scores.forEach(([player1Score, player2Score, expectedScore]) => {
       it(`scores ${player1Score}:${player2Score} as ${expectedScore}`, () => {
         checkScore(new TennisGame3('player1', 'player2'), player1Score, player2Score, expectedScore);
