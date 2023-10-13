@@ -17,11 +17,16 @@ export class TennisGame3 implements TennisGame {
     if (this.player1Score < 4 && this.player2Score < 4 && !(this.player1Score + this.player2Score === 6)) {
       return this.currentScore();
     } else {
-      if (this.player1Score === this.player2Score)
-        return 'Deuce';
-      score = this.player1Score > this.player2Score ? this.player1Name : this.player2Name;
-      return (((this.player1Score - this.player2Score) * (this.player1Score - this.player2Score)) === 1) ? 'Advantage ' + score : 'Win for ' + score;
+      return this.finalScore();
     }
+  }
+
+  private finalScore() {
+    let score: string;
+    if (this.player1Score === this.player2Score)
+      return 'Deuce';
+    score = this.player1Score > this.player2Score ? this.player1Name : this.player2Name;
+    return (((this.player1Score - this.player2Score) * (this.player1Score - this.player2Score)) === 1) ? 'Advantage ' + score : 'Win for ' + score;
   }
 
   private currentScore(): string {
