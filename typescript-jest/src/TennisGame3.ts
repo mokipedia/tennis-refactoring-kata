@@ -20,7 +20,7 @@ export class TennisGame3 implements TennisGame {
     }
   }
 
-  private finalScore() {
+  private finalScore(): string {
     let score: string;
     if (this.player1Score === this.player2Score)
       return 'Deuce';
