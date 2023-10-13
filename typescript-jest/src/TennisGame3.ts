@@ -13,8 +13,16 @@ export class TennisGame3 implements TennisGame {
   }
 
   getScore(): string {
-    if (this.player1Score < 4 && this.player2Score < 4 && !(this.player1Score + this.player2Score === 6)) {
-      return this.currentScore();
+    if (this.player1Score < 4) {
+      if (this.player2Score < 4) {
+        if (!(this.player1Score + this.player2Score === 6)) {
+          return this.currentScore();
+        } else {
+          return this.finalScore();
+        }
+      } else {
+        return this.finalScore();
+      }
     } else {
       return this.finalScore();
     }
