@@ -1,10 +1,10 @@
 import { TennisGame } from './TennisGame';
 
 export class TennisGame3 implements TennisGame {
-  private player1Name: string;
+  private readonly player1Name: string;
   private player1Score: number = 0;
 
-  private player2Name: string;
+  private readonly player2Name: string;
   private player2Score: number = 0;
 
   constructor(player1Name: string, player2Name: string) {
